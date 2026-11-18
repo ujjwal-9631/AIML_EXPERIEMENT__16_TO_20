@@ -1,0 +1,31 @@
+
+# Rule-Based Expert System for Car Fault Diagnosis
+
+print("===== CAR FAULT DIAGNOSIS SYSTEM =====")
+
+battery = input("Is the battery dead? (yes/no): ").lower()
+engine = input("Is the engine starting? (yes/no): ").lower()
+fuel = input("Is fuel available? (yes/no): ").lower()
+noise = input("Is there unusual noise? (yes/no): ").lower()
+
+# IF-THEN Production Rules
+
+if battery == "yes":
+    print("\nDiagnosis: Battery Problem")
+    print("Solution: Charge or replace the battery.")
+
+elif engine == "no" and fuel == "no":
+    print("\nDiagnosis: Fuel Problem")
+    print("Solution: Refill the fuel tank.")
+
+elif engine == "no" and fuel == "yes":
+    print("\nDiagnosis: Engine Starting Problem")
+    print("Solution: Check the starter motor and ignition system.")
+
+elif noise == "yes":
+    print("\nDiagnosis: Mechanical Problem")
+    print("Solution: Consult a car mechanic.")
+
+else:
+    print("\nDiagnosis: No major fault detected.")
+    print("Solution: Car appears to be working normally.")
