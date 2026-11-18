@@ -1,0 +1,47 @@
+
+# Semantic Network using Dictionary
+
+knowledge = {
+    "Human": ["Animal"],
+    "Student": ["Human"],
+    "Ujjwal": ["Student"]
+}
+
+# Initial facts
+facts = ["Ujjwal"]
+
+# Rules for Forward Chaining
+rules = [
+    ("Student", "Human"),
+    ("Human", "Animal")
+]
+
+def forward_chaining(facts, rules):
+    new_facts = facts.copy()
+
+    while True:
+        added = False
+
+        for fact in new_facts.copy():
+            for rule in rules:
+                if fact == rule[0]:
+                    if rule[1] not in new_facts:
+                        new_facts.append(rule[1])
+                        added = True
+
+        if not added:
+            break
+
+    return new_facts
+
+
+# Display Semantic Network
+print("Semantic Network:")
+for key, value in knowledge.items():
+    print(key, "->", value)
+
+# Apply Forward Chaining
+result = forward_chaining(facts, rules)
+
+print("\nInitial Facts:", facts)
+print("Inferred Facts:", result)
