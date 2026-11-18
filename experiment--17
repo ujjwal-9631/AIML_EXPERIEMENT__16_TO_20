@@ -1,0 +1,22 @@
+
+# Legal Eligibility Checker using Rule-Based Reasoning
+
+age = int(input("Enter your age: "))
+
+# Voting Eligibility
+if age >= 18:
+    print("Voting Eligibility: Eligible")
+else:
+    print("Voting Eligibility: Not Eligible")
+
+# Driving Eligibility
+if age >= 18:
+    print("Driving Eligibility: Eligible")
+else:
+    print("Driving Eligibility: Not Eligible")
+
+# Employment Eligibility
+if age >= 18:
+    print("Employment Eligibility: Eligible")
+else:
+    print("Employment Eligibility: Not Eligible")
